@@ -13,4 +13,3 @@ def get_bot():
     else:
         print("Я выдал бота")
         return bot
-    
