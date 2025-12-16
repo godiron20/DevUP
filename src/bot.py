@@ -1,4 +1,4 @@
-from config import settings
+from src.config import settings
 from telebot.async_telebot import AsyncTeleBot
 
 token = settings.TELEGRAM_TOKEN

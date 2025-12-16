@@ -9,6 +9,6 @@ startmarkup.add(itembtn1, itembtn2)
 
 # Ответы на вопросы
 markup = types.ReplyKeyboardMarkup(row_width=1)
-itembtn3 = types.KeyboardButton('Набрать массу')
+itembtn3 = types.KeyboardButton('Какой у тебя рост?')
 itembtn4 = types.KeyboardButton('Сбросить вес')
 markup.add(itembtn3, itembtn4)

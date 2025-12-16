@@ -1,5 +1,6 @@
 SHELL := /bin/bash
 
+all: migration-upgrade run_api
 
 .PHONY: requirements
 requirements: pyproject.toml
@@ -17,9 +18,9 @@ migration-upgrade: requirements
 	poetry run alembic upgrade head
 
 
-.PHONY: run_uvcorn
-run_uvcorn: requirements
-	poetry run python src/main.py
+.PHONY: run_api
+run_api: requirements
+	poetry run python starter.py
 
 .PHONY: starter_db
 starter_db:

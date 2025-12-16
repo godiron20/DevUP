@@ -2,8 +2,12 @@ from enum import Enum
 
 
 class user_position(str, Enum):
-    my_colories = 'мои колории'
-    my_program = 'Набор веса'
-    my_programtren = 'программа тренировок'
-    my_racion = 'рацион питания'
-# Продумать и прописать позиции на которых может остановиться пользователь
+    height = '/user_data/height'
+    weight = '/user_data/weight'
+    physique = '/user_data/physique'
+    program = '/user_prog'
+
+
+class tren_group (str, Enum):
+    nogi_ladizhka = 'Лодыжка'
+    nogi_bedro = 'opopo'
