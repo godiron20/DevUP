@@ -16,7 +16,7 @@ from src.config import settings
 from src.db.session import Base
 
 # should add all models here
-from src.models.users import Users
+from src.models.info import Users, Racion, Tren
 
 
 target_metadata = Base.metadata

@@ -1,4 +1,4 @@
-from sqlalchemy import String, Integer, Float
+from sqlalchemy import String, Integer, Float, Boolean
 from sqlalchemy.orm import Mapped, mapped_column
 from src.db.session import Base
 
@@ -10,9 +10,13 @@ class Users(Base):
 
     id: Mapped[int] = mapped_column(String, primary_key=True)
     username: Mapped[str] = mapped_column(String, nullable=False)
+    height: Mapped[float] = mapped_column(Float, nullable=True)
+    weight: Mapped[float] = mapped_column(Float, nullable=True)
+    imt: Mapped[float] = mapped_column(Float, nullable=True)
     lang: Mapped[str] = mapped_column(String, nullable=False)
     calories: Mapped[float] = mapped_column(Float, nullable=True)
     position: Mapped[user_position] = mapped_column(String, nullable=False)
+    is_admin: Mapped[bool] = mapped_column(Boolean, nullable=False)
 
 
 class Tren(Base):

@@ -6,7 +6,19 @@ from src.conts.users import user_position, tren_group
 class UsersDB(BaseModel):
     id: int = Field(description="айди пользователя")
     username: str = Field(description="имя пользователя")
+    height: float = Field(description="Показатель роста")
+    weight: float = Field(description="Показатель веса")
+    imt: float = Field(description="ИМТ")
     lang: str = Field(description="язык")
+    calories: float | None = Field(description="калории", default=None)
+    position: user_position | None = Field(description="позиция", default=None)
+
+class UsersUpdate(BaseModel):
+    username: str = Field(description="имя пользователя")
+    height: float | None= Field(description="Показатель роста")
+    weight: float | None = Field(description="Показатель веса")
+    imt: float | None = Field(description="ИМТ")
+    lang: str | None = Field(description="язык")
     calories: float | None = Field(description="калории", default=None)
     position: user_position | None = Field(description="позиция", default=None)
 

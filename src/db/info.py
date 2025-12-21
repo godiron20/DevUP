@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
-from src.schemas.info import UsersDB, TrenDB, TrenFilter, RacionDB
-from src.models.users import Users, Tren, Racion
+from src.schemas.info import UsersDB, TrenDB, TrenFilter, RacionDB, UsersUpdate
+from src.models.info import Users, Tren, Racion
 from src.db.session import get_session
 
 
@@ -13,6 +13,16 @@ async def create_user(body: UsersDB):
         db_session.add(new_user)
         await db_session.commit()
         return new_user
+
+async def update_user(body:UsersUpdate):
+    async with get_session() as db_session:
+        query = await db_session.execute(select(Users).where(Users.username == body.username))
+        query = query.scalar()
+        if query:
+            for key, value in body.model_dump(exclude_unset=True).items():
+                setattr(query, key, value)
+            await db_session.commit()
+            await db_session.refresh(query)
 
 async def get_users_list() -> list[UsersDB]:
     async with get_session() as db_session:
@@ -25,7 +35,6 @@ async def get_one(user_name:str):
         return query_result.scalar_one_or_none()
 
 
-
 async def create_tren(body: TrenDB):
     async with get_session() as db_session:
         new_tren = Tren(**body.model_dump(exclude_unset=True))
@@ -33,7 +42,7 @@ async def create_tren(body: TrenDB):
         await db_session.commit()
         return new_tren
 
-async def get_users_list(filter:TrenFilter) -> list[TrenDB]:
+async def get_tren_list(filter:TrenFilter) -> list[TrenDB]:
     async with get_session() as db_session:
 
         query = select(Tren)
@@ -58,6 +67,7 @@ async def get_users_list(filter:TrenFilter) -> list[TrenDB]:
         query_result = await db_session.execute(query)
 
         return query_result.scalars().all()
+
 
 
 async def get_one(id: int):
