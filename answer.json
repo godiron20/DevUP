@@ -1,50 +1,26 @@
-{   
-    "lang_data":{
-        "ru":{
-            "Hello": "Здравствуй, я твой персональный помощник по подбору питания и тренировок для твоего идеального тела",
-            "2mes": "Ты хочешь набрать масссу или сбросить вес?",
-            "mas": "Набрать массу",
-            "dwes": "Сбросить вес"
-        },
-        "en":{
-            "Hello": "Hello, I'm your personal nutrition and workout assistant for your ideal body",
-            "2mes": "Do you want to gain mass or lose weight?",
-            "mas": "Gain mass",
-            "dwes": "Lose weight"
-        }
+{
+    "ru":{
+        "Hello": "Здравствуй, я твой персональный помощник по подбору питания и тренировок для твоего идеального тела",
+        "height": "Какой у тебя рост?",
+        "weight": "Какой у тебя вес?",
+        "physique": "Какое у тебя телосложение?",
+        "gender": "М или Ж?",
+        "prog": "Какую программу ты хочешь?",
+        "answer1": "Набрать массу",
+        "answer2": "Сбросить вес",
+        "your_program": "Твоя программа: ",
+        "rework": "У меня изменились данные!"
     },
-    "USER_DATA":{
-        "12233":{
-            "lang": "ru",
-            "calori": 1300
-        },
-        "12234":{
-            "lang": "en", 
-            "calori": 800
-        },
-        "12235":{
-            "lang": "es",
-            "calori": 1500
-        },
-        "12236":{
-            "lang": "fr",
-            "calori": 1100
-        },
-        "12237":{
-            "lang": "de",
-            "calori": 950
-        },
-        "12238":{
-            "lang": "ru",
-            "calori": 1700
-        },
-        "12239":{
-            "lang": "en",
-            "calori": 1200
-        },
-        "12240":{
-            "lang": "it",
-            "calori": 1350
-        }
+    "en":{
+        "Hello": "Hello, I am your personal assistant for selecting nutrition and workouts for your ideal body",
+        "height": "What is your height?",
+        "weight": "What is your weight?",
+        "physique": "What is your body type?",
+        "gender": "M or F?",
+        "prog": "Which program do you want?",
+        "answer1": "Gain mass",
+        "answer2": "Lose weight",
+        "your_program": "Your program: ",
+        "rework": "My data has changed!"
     }
 }
